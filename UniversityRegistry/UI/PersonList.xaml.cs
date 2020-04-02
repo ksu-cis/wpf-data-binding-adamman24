@@ -22,5 +22,19 @@ namespace UniversityRegistry.UI
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// event handler
+        /// </summary>
+        public event SelectionChangedEventHandler SelectionChanged;
+
+        /// <summary>
+        /// event listener passes selectionchanged events
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            SelectionChanged?.Invoke(this, e);
+        }
     }
 }
